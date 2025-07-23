@@ -4,13 +4,25 @@
     "config:recommended"
   ],
   "timezone": "Asia/Tokyo",
-  "schedule": ["after 10am on monday", "before 12am on monday"],
+  "schedule": ["after 9am", "before 12pm"],
+  "rangeStrategy": "bump",
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 10,
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "semanticCommitScope": "deps",
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "schedule": ["at any time"]
+  },
+  "forkProcessing": "disabled",
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["patch"],
       "automerge": true,
-      "description": "Dev dependencies are automatically updated to the latest patch version"
+      "description": "dependencies are automatically updated to the latest patch version"
     }
   ]
 }
