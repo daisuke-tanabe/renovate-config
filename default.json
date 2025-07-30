@@ -4,12 +4,12 @@
     "config:recommended"
   ],
   "timezone": "Asia/Tokyo",
-  "schedule": ["after 9am", "before 12pm"],
+  "schedule": ["after 9am on monday", "before 12am on monday"],
   "rangeStrategy": "bump",
   "separateMajorMinor": true,
   "separateMultipleMajor": true,
   "prHourlyLimit": 2,
-  "prConcurrentLimit": 10,
+  "prConcurrentLimit": 5,
   "semanticCommits": "enabled",
   "semanticCommitType": "chore",
   "semanticCommitScope": "deps",
@@ -23,6 +23,11 @@
       "matchUpdateTypes": ["patch"],
       "automerge": true,
       "description": "dependencies are automatically updated to the latest patch version"
+    },
+    {
+      "matchPackagePatterns": ["eslint*", "@typescript-eslint/*"],
+      "groupName": "eslint",
+      "description": "Group ESLint packages together"
     }
   ]
 }
