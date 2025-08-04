@@ -26,8 +26,9 @@
     },
     {
       "matchPackagePatterns": ["eslint*", "@typescript-eslint/*"],
-      "groupName": "eslint",
-      "description": "Group ESLint packages together"
+      "matchPackageNames": ["typescript"],
+      "groupName": "linting and typescrip",
+      "description": "Group ESLint, TypeScript ESLint, and TypeScript packages together"
     }
   ]
 }
