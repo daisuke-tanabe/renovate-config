@@ -30,8 +30,13 @@
     },
     {
       "groupName": "lint and typescript",
-      "matchPackagePatterns": ["^eslint", "^@typescript-eslint"],
+      "matchPackagePatterns": ["^eslint", "^@typescript-eslint/"],
       "matchPackageNames": ["typescript", "prettier"]
-    }
+    },
+    {
+      "groupName": "storybook",
+      "matchPackagePatterns": ["^@storybook/"],
+      "matchPackageNames": ["storybook"]
+    },
   ]
 }
