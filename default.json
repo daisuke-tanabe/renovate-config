@@ -23,6 +23,10 @@
       "automerge": true,
       "description": "dependencies are automatically updated to the latest patch version"
     },
+    {                                                                                                                                                                                                                             
+      "groupName": "node.js",                                                                                                                                                                                                     
+      "matchDepNames": ["node", "@types/node", "public.ecr.aws/docker/library/node"]                                                                                                                                              
+    },
     {
       "groupName": "react",
       "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"]
