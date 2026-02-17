@@ -41,5 +41,27 @@
       "matchPackagePatterns": ["^@storybook/"],
       "matchPackageNames": ["storybook"]
     },
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)Dockerfile.*$"],
+      "matchStrings": [
+        "pnpm@(?<currentValue>\\d+\\.\\d+\\.\\d+(?:-[^@\\s]+)?)"
+      ],
+      "depNameTemplate": "pnpm",
+      "datasourceTemplate": "npm",
+      "versioningTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)Dockerfile.*$"],
+      "matchStrings": [
+        "turbo@(?<currentValue>\\d+\\.\\d+\\.\\d+(?:-[^@\\s]+)?)"
+      ],
+      "depNameTemplate": "turbo",
+      "datasourceTemplate": "npm",
+      "versioningTemplate": "npm"
+    }
   ]
 }
