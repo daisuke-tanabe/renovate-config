@@ -26,8 +26,7 @@
     {
       "description": "Group Node.js runtime, Docker image, and type definitions to keep versions aligned",
       "groupName": "node.js",
-      "matchDepNames": ["node", "@types/node"],
-      "matchPackageNames": ["public.ecr.aws/docker/library/node"]
+      "matchDepNames": ["node", "@types/node", "public.ecr.aws/docker/library/node"]
     },
     {
       "description": "Group React runtime and type definitions to keep versions aligned",
