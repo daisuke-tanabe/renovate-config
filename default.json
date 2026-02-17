@@ -5,7 +5,6 @@
   ],
   "timezone": "Asia/Tokyo",
   "rangeStrategy": "bump",
-  "separateMajorMinor": true,
   "separateMultipleMajor": true,
   "prHourlyLimit": 5,
   "prConcurrentLimit": 10,
@@ -19,28 +18,39 @@
   "forkProcessing": "disabled",
   "packageRules": [
     {
+      "description": "Patch updates are automatically merged",
       "matchUpdateTypes": ["patch"],
       "automerge": true,
-      "description": "dependencies are automatically updated to the latest patch version"
-    },
-    {                                                                                                                                                                                                                             
-      "groupName": "node.js",                                                                                                                                                                                                     
-      "matchDepNames": ["node", "@types/node", "public.ecr.aws/docker/library/node"]                                                                                                                                              
+      "platformAutomerge": true
     },
     {
+      "description": "Group Node.js runtime, Docker image, and type definitions to keep versions aligned",
+      "groupName": "node.js",
+      "matchDepNames": ["node", "@types/node"],
+      "matchPackageNames": ["public.ecr.aws/docker/library/node"]
+    },
+    {
+      "description": "Group React runtime and type definitions to keep versions aligned",
       "groupName": "react",
       "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"]
     },
     {
+      "description": "Group ESLint, TypeScript, and Prettier to avoid config incompatibilities",
       "groupName": "lint and typescript",
-      "matchPackagePatterns": ["^eslint", "^@typescript-eslint/"],
-      "matchPackageNames": ["typescript", "typescript-eslint", "prettier"]
+      "matchPackageNames": [
+        "eslint*",
+        "@eslint/**",
+        "@typescript-eslint/**",
+        "typescript",
+        "typescript-eslint",
+        "prettier"
+      ]
     },
     {
+      "description": "Group all Storybook packages to update together",
       "groupName": "storybook",
-      "matchPackagePatterns": ["^@storybook/"],
-      "matchPackageNames": ["storybook"]
-    },
+      "matchPackageNames": ["@storybook/**", "storybook"]
+    }
   ],
   "customManagers": [
     {
