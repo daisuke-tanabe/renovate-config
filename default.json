@@ -4,6 +4,7 @@
     "config:recommended"
   ],
   "timezone": "Asia/Tokyo",
+  "schedule": ["after 12am and before 6am every day"],
   "rangeStrategy": "bump",
   "separateMultipleMajor": true,
   "prHourlyLimit": 5,
