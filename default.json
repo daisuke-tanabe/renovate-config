@@ -19,8 +19,17 @@
   "forkProcessing": "disabled",
   "packageRules": [
     {
-      "description": "Patch updates are automatically merged",
+      "matchUpdateTypes": ["major"],
+      "labels": ["renovate-major"]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "labels": ["renovate-minor"]
+    },
+    {
       "matchUpdateTypes": ["patch"],
+      "labels": ["renovate-patch"],
+      "description": "Patch updates are automatically merged",
       "automerge": true,
       "platformAutomerge": true
     },
